@@ -1,0 +1,77 @@
+<h1><code ng:non-bindable="">OffersService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">offers.module</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="offers-module-offersservice-page"><p>This service class contains methods needed to show Order list and selected Order info of a logged in customer.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/dateService">dateService</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getlatestproducts">GetLatestProducts(page)</h3>
+<div class="getlatestproducts"><div class="offers-module-offersservice-getlatestproducts-page"><p>Gets items with special offers</p>
+</div><h5 id="methods_getlatestproducts_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>page</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="offers-module-offersservice-getlatestproducts-page"><p>Page number</p>
+</div></td></tr></tbody></table><h5 id="methods_getlatestproducts_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="offers-module-offersservice-getlatestproducts-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getlatestproducts_example">Example</h4>
+<div class="example"><div class="offers-module-offersservice-getlatestproducts-page"><p>Resolved Object
+<pre class="prettyprint linenums">
+{
+ "heading_title": "Special Offers",
+ "text_empty": "There are no special offer products to list.",
+ "products": [
+   {
+     "product_id": "43",
+     "thumb": "full_image_path200x200.jpg",
+     "name": "MacBook",
+     "description": "description",
+     "price": "$602.00",
+     "price_clear": "500.0000",
+     "special": false,
+     "special_clear": null,
+     "mobile_special": "$26.00",
+     "mobile_special_clear": "20.0000",
+     "off":"20",
+     "tax": "$500.00",
+     "rating": 0,
+     "images": [
+       "full_image_path100x100.jpg",
+       "full_image_path100x100.jpg",
+       "full_image_path100x100.jpg"
+     ]
+   }
+ ]
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getofferbanners">GetOfferBanners()</h3>
+<div class="getofferbanners"><div class="offers-module-offersservice-getofferbanners-page"><p>Gets offers banner configured in the API</p>
+</div><h5 id="methods_getofferbanners_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="offers-module-offersservice-getofferbanners-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getofferbanners_example">Example</h4>
+<div class="example"><div class="offers-module-offersservice-getofferbanners-page"><pre class="prettyprint linenums">
+OffersService.GetOfferBanners().then(function (data) {
+       $scope.data.slides = data.banners;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+{
+   "banners": [{
+       "title": "iPhone 6",
+       "link": "#/app/menu/shop/item/24",
+       "image": "full_image_path.jpg"
+   }]
+}
+</pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,57 @@
+<h1><code ng:non-bindable="">AuthService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">auth.module</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="auth-module-authservice-page"><p>This service class contains methods needed to start social api authentication and customer login procedures.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$ionicLoading">$ionicLoading</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/BASE_API_URL">BASE_API_URL</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/dateService">dateService</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_auth">Auth(provider)</h3>
+<div class="auth"><div class="auth-module-authservice-auth-page"><p>Starts a new connect authentication flow with a given <code>provider</code>. If provider settings are not
+configured in the backend, it will return a promise with error. Returns a promise containing success 
+or failure response from the server. Promise resolved an object with newly created/logged in customer <code>id</code> 
+property if succssful authentication. Otherwise rejects with an object containing property <code>error</code>.
+         <pre class="prettyprint linenums">
+         {
+            id : 1
+         }
+         </pre>
+or
+         <pre class="prettyprint linenums">
+         {
+            error: "Warning: You do not have permission to access the API!"
+         }
+         </pre>
+</div><h5 id="methods_auth_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>provider</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="auth-module-authservice-auth-page"><p>Provider name. ex. <code>google</code>, <code>facebook</code> and <code>twitter</code> by default</p>
+</div></td></tr></tbody></table><h5 id="methods_auth_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="auth-module-authservice-auth-page"><p>Returns a promise with customer <code>id</code> or <code>error</code></p>
+</div></td></tr></table><h4 id="methods_auth_example">Example</h4>
+<div class="example"><div class="auth-module-authservice-auth-page"><pre class="prettyprint linenums">
+AuthService.Auth("google").then(function (data) {
+     loadUserData(data.id);
+ }, function (data) {
+     alert(data.error);
+});
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_loaduserdata">LoadUserData(id)</h3>
+<div class="loaduserdata"><div class="auth-module-authservice-loaduserdata-page"><p>Get customer data by id</p>
+</div><h5 id="methods_loaduserdata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="auth-module-authservice-loaduserdata-page"><p>Customer id</p>
+</div></td></tr></tbody></table><h5 id="methods_loaduserdata_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="auth-module-authservice-loaduserdata-page"><p>Returns a promise with customer object</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

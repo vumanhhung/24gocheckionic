@@ -1,0 +1,43 @@
+<h1><code ng:non-bindable="">InfoService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">info.module</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="info-module-infoservice-page"><p>This service class contains methods needed to show Order list and selected Order info of a logged in customer.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/dateService">dateService</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getorder">GetOrder(id)</h3>
+<div class="getorder"><div class="info-module-infoservice-getorder-page"><p>Gets order details identified by the id</p>
+</div><h5 id="methods_getorder_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="info-module-infoservice-getorder-page"><p>Order id</p>
+</div></td></tr></tbody></table><h5 id="methods_getorder_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="info-module-infoservice-getorder-page"><p>Returns a promise of the order</p>
+</div></td></tr></table><h4 id="methods_getorder_example">Example</h4>
+<div class="example"><div class="info-module-infoservice-getorder-page"><pre class="prettyprint linenums">
+InfoService.GetOrder(id).then(function (data) {
+   $scope.order = data;
+});
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getorders">GetOrders()</h3>
+<div class="getorders"><div class="info-module-infoservice-getorders-page"><p>Gets order list of the logged in user</p>
+</div><h5 id="methods_getorders_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="info-module-infoservice-getorders-page"><p>Returns a promise of the order list</p>
+</div></td></tr></table><h4 id="methods_getorders_example">Example</h4>
+<div class="example"><div class="info-module-infoservice-getorders-page"><pre class="prettyprint linenums">
+InfoService.GetOrders().then(function (data) {
+   $scope.orders = data.orders;
+});
+</pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

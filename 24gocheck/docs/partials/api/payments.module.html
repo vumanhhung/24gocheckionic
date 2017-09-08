@@ -1,0 +1,14 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ui.router">router</a></code>
+</li>
+</ul>
+<div class="payments-module-page"><p>Payments module registeres payment method modules as dependencies. If a new payment method
+module is introduced, you have to register it as a dependency.</p>
+</div><h2 id="example">Example</h2>
+<div class="example"><div class="payments-module-page"><pre><code>angular.module(&#39;payments.module&#39;, [&#39;ui.router&#39;, &#39;advertikon_stripe.module&#39;]);
+</code></pre></div></div>
+</div>

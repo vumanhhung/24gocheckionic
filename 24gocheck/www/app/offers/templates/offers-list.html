@@ -1,0 +1,37 @@
+<ion-view view-title="{{ 'offers.title_list_page' | i18n }}">
+
+    <ion-pane class="pane has-tabs-top">
+        <ion-tabs class="sub-tab-top tabs-color-active-standard tabs-positive tabs-icon-left">
+
+            <ion-tab title="{{ 'offers.title_special_offers' | i18n }}" icon-off="ion-ios-pricetag-outline" icon-on="ion-ios-pricetag-outline">
+                <ion-nav-view name="tab-tab1">
+                    <ion-content class="has-sub-tabs-top">
+                        <div class="padding text-center">
+                            <div class="large-icon-message">
+                                <span class="large-app-icon large-app-icon-red">
+                                    <i class="ion-ios-locked-outline"></i>
+                                </span>
+                                <p>Sorry! This feature is available only in full version. Contact <a href="mailto:lite@i2csmobile.com">lite@i2csmobile.com</a></p>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="{{ 'offers.title_special_items' | i18n }}" icon-off="ion-ios-lightbulb-outline" icon-on="ion-ios-lightbulb-outline">
+                <ion-nav-view name="tab-tab2">
+                    <ion-content class="has-sub-tabs-top">
+                        <div class="padding text-center">
+                            <div class="large-icon-message">
+                                <span class="large-app-icon large-app-icon-red">
+                                    <i class="ion-ios-locked-outline"></i>
+                                </span>
+                                <p>Sorry! This feature is available only in full version. Contact <a href="mailto:lite@i2csmobile.com">lite@i2csmobile.com</a></p>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+    </ion-pane>
+</ion-view>

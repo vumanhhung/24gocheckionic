@@ -1,0 +1,452 @@
+<h1><code ng:non-bindable="">ShopService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">shop.module</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="shop-module-shopservice-page"><p>Service contains methods to communicate with the API. All methods returns a <code>promise</code> object containing 
+the requested data. On a success response it returns the data from the server, and on an error the promise 
+rejects with the HTTP server response.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/dateService">dateService</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addproductreview">AddProductReview(product_id, name, rating, text)</h3>
+<div class="addproductreview"><div class="shop-module-shopservice-addproductreview-page"><p>Get product reviews of a product</p>
+</div><h5 id="methods_addproductreview_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>product_id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-addproductreview-page"><p>Product id</p>
+</div></td></tr><tr><td>name</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="shop-module-shopservice-addproductreview-page"><p>Reviewer name</p>
+</div></td></tr><tr><td>rating</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-addproductreview-page"><p>Rating</p>
+</div></td></tr><tr><td>text</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="shop-module-shopservice-addproductreview-page"><p>User review text</p>
+</div></td></tr></tbody></table><h5 id="methods_addproductreview_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-addproductreview-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_addproductreview_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-addproductreview-page"><pre class="prettyprint linenums">
+ShopService.AddProductReview(id, name, rating, text).then(function (data) {
+   $scope.success_message = data.success;
+});
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getbannerbyid">GetBannerById(banner_id, width, height)</h3>
+<div class="getbannerbyid"><div class="shop-module-shopservice-getbannerbyid-page"><p>Gets banner images by banner id</p>
+</div><h5 id="methods_getbannerbyid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>banner_id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getbannerbyid-page"><p>Banner id</p>
+</div></td></tr><tr><td>width</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getbannerbyid-page"><p>Banner width. 1140px is default if left blank</p>
+</div></td></tr><tr><td>height</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getbannerbyid-page"><p>Banner height. 380px is default if left blank</p>
+</div></td></tr></tbody></table><h5 id="methods_getbannerbyid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getbannerbyid-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getbannerbyid_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getbannerbyid-page"><pre class="prettyprint linenums">
+ShopService.GetBannerById(1).then(function (data) {
+       $scope.data.slides = data.banners;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+{
+   "banners": [{
+       "title": "iPhone 6",
+       "link": "#/app/menu/shop/item/24",
+       "image": "full_image_path.jpg"
+   }]
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getbanners">GetBanners()</h3>
+<div class="getbanners"><div class="shop-module-shopservice-getbanners-page"><p>Gets main banners configured in the system. Additional configuration is needed from
+OpenCart i2CSMobile module end.</p>
+</div><h5 id="methods_getbanners_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getbanners-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getbanners_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getbanners-page"><pre class="prettyprint linenums">
+ShopService.GetBanners().then(function (data) {
+       $scope.data.slides = data.main_banners;
+       $scope.data.offers = data.offer_banner;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+{
+   "main_banners": [
+       {
+           "title": "MacBookAir",
+           "link": "",
+           "image": "full_image_path.jpg"
+       }
+   ],
+   "offer_banner": [
+       {
+           "title": "HP Banner",
+           "link": "#/app/product/7",
+           "image": "full_image_path.jpg"
+       }
+   ]
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getcategories">GetCategories()</h3>
+<div class="getcategories"><div class="shop-module-shopservice-getcategories-page"><p>Gets categories configured in the system. if none is configured, returns all parent categories</p>
+</div><h5 id="methods_getcategories_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getcategories-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getcategories_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getcategories-page"><pre class="prettyprint linenums">
+ShopService.GetCategories().then(function (data) {
+       $scope.data.categories = data.categories;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+{
+   "category_id": 0,
+   "child_id": 0,
+   "categories": [
+       {
+           "category_id": "20",
+           "name": "Desktops",
+           "image": "full_image_path.jpg"
+       },
+       {
+           "category_id": "18",
+           "name": "Laptops",
+           "image": "full_image_path.jpg"
+       }
+   ]
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getcategoryproducts">GetCategoryProducts(id, page)</h3>
+<div class="getcategoryproducts"><div class="shop-module-shopservice-getcategoryproducts-page"><p>Gets product list of a category</p>
+</div><h5 id="methods_getcategoryproducts_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getcategoryproducts-page"><p>Category id</p>
+</div></td></tr><tr><td>page</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getcategoryproducts-page"><p>Page number</p>
+</div></td></tr></tbody></table><h5 id="methods_getcategoryproducts_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getcategoryproducts-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getcategoryproducts_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getcategoryproducts-page"><pre class="prettyprint linenums">
+ShopService.GetCategoryProducts(1, 1).then(function (data) {
+   $scope.items = data.products;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+{
+ "heading_title": "Desktops",
+ "text_empty": "There are no products to list in this category.",
+ "thumb": "full_image_path.jpg",
+ "description": "description",
+ "categories": [
+   {
+     "name": "PC",
+     "id": "26"
+   }
+ ],
+ "products": [
+   {
+     "product_id": "42",
+     "thumb": "full_image_path.jpg",
+     "name": "Apple Cinema 30",
+     "description": "Cinema HD Display delivers..",
+     "price": "$122.00",
+     "price_clear": "100.0000",
+     "special": "$110.00",
+     "special_clear": "90.0000",
+     "off":"10",
+     "mobile_special": false,
+     "mobile_special_clear": null,
+     "tax": "$90.00",
+     "minimum": "2",
+     "rating": 0,
+     "images": [
+       "full_image_path.jpg",
+       "full_image_path.jpg",
+       "full_image_path.jpg"
+     ]
+   }
+ ],
+ "sort": "p.sort_order",
+ "order": "ASC",
+ "limit": 10
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getfeaturedproducts">GetFeaturedProducts()</h3>
+<div class="getfeaturedproducts"><div class="shop-module-shopservice-getfeaturedproducts-page"><p>Gets featured products list. Needs configuration settings in the OpenCart module.</p>
+</div><h5 id="methods_getfeaturedproducts_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getfeaturedproducts-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getfeaturedproducts_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getfeaturedproducts-page"><pre class="prettyprint linenums">
+ShopService.GetFeaturedProducts().then(function (data) {
+       $scope.data.featuredItems = data.products;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+   {
+     "heading_title": "Featured",
+     "products": [
+       {
+         "product_id": "42",
+         "thumb": "full_image_path50x50.jpg",
+         "name": "Apple Cinema 30",
+         "description": "description",
+         "price": "$122.00",
+         "price_clear": "100.0000",
+         "special": "$110.00",
+         "special_clear": "90.0000",
+         "mobile_special": false,
+         "mobile_special_clear": null,
+         "off": "10",
+         "tax": "$90.00",
+         "rating": 0,
+         "images": [
+           "full_image_path100x100.jpg",
+           "full_image_path100x100.jpg",
+           "full_image_path100x100.jpg"
+         ]
+       }
+     ]
+   }
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getlatestproducts">GetLatestProducts(page)</h3>
+<div class="getlatestproducts"><div class="shop-module-shopservice-getlatestproducts-page"><p>Gets latest products list</p>
+</div><h5 id="methods_getlatestproducts_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>page</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getlatestproducts-page"><p>Page number</p>
+</div></td></tr></tbody></table><h5 id="methods_getlatestproducts_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getlatestproducts-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getlatestproducts_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getlatestproducts-page"><pre class="prettyprint linenums">
+ShopService.GetLatestProducts($scope.data.latestPage).then(function (data) {
+   $scope.data.latestItems = data.products;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+   {
+     "heading_title": "Latest",
+     "products": [
+       {
+         "product_id": "47",
+         "thumb": "full_image_path50x50.jpg",
+         "name": "HP LP3065",
+         "description": "description",
+         "price": "$122.00",
+         "price_clear": "100.0000",
+         "special": false,
+         "special_clear": null,
+         "mobile_special": "$26.00",
+         "mobile_special_clear": "20.0000",
+         "off": "10",
+         "tax": "$100.00",
+         "rating": 0,
+         "images": [
+           "full_image_path100x100.jpg"
+         ]
+       }
+     ]
+   }
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getproduct">GetProduct(id)</h3>
+<div class="getproduct"><div class="shop-module-shopservice-getproduct-page"><p>Gets details of a product</p>
+</div><h5 id="methods_getproduct_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getproduct-page"><p>Product id</p>
+</div></td></tr></tbody></table><h5 id="methods_getproduct_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getproduct-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getproduct_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getproduct-page"><pre class="prettyprint linenums">
+ShopService.GetProduct($stateParams.id).then(function (data) {
+   $scope.item = data;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+{
+ "heading_title": "Apple Cinema 30",
+ "product_id": 42,
+ "manufacturer": "Apple",
+ "manufacturers": "8",
+ "model": "Product 15",
+ "reward": "100",
+ "points": "400",
+ "description": "description",
+ "stock": "In Stock",
+ "popup": "full_image_path500x500.jpg",
+ "thumb": "full_image_path228x228.jpg",
+ "images": [
+   {
+     "popup": "full_image_path500x500.jpg",
+     "thumb": "full_image_path74x74.jpg",
+     "preview": "full_image_path228x228.jpg"
+   }
+ ],
+ "price": "$122.00",
+ "special": "$110.00",
+ "off": "10",
+ "mobile_special": false,
+ "tax": "$90.00",
+ "discounts": [
+   {
+     "quantity": "10",
+     "price": "$107.60"
+   }
+ ],
+ "options": [
+   {
+     "product_option_id": "218",
+     "product_option_value": [
+       {
+         "product_option_value_id": "5",
+         "option_value_id": "32",
+         "name": "Small",
+         "image": null,
+         "price": "$12.00",
+         "price_prefix": "+"
+       }
+     ],
+     "option_id": "1",
+     "name": "Radio",
+     "type": "radio",
+     "value": "",
+     "required": "1"
+   }
+ ],
+ "minimum": "2",
+ "review_status": "1",
+ "review_guest": true,
+ "customer_name": "",
+ "reviews": "0 reviews",
+ "rating": 0,
+ "captcha": "",
+ "attribute_groups": [
+   {
+     "attribute_group_id": "6",
+     "name": "Processor",
+     "attribute": [
+       {
+         "attribute_id": "3",
+         "name": "Clockspeed",
+         "text": "100mhz"
+       }
+     ]
+   }
+ ],
+ "products": [
+   {
+     "product_id": "40",
+     "thumb": "full_image_path80x80.jpg",
+     "name": "iPhone",
+     "description": "iPhone is a revolutionary new mobile ph..",
+     "price": "$123.20",
+     "price_clear": "101.0000",
+     "special": false,
+     "special_clear": null,
+     "mobile_special": false,
+     "mobile_special_clear": null,
+     "off": "10",
+     "tax": "$101.00",
+     "minimum": "1",
+     "rating": 0,
+     "href": "http://localhost/opencart-2.1.0.1/upload/index.php?route=product/product&amp;product_id=40"
+   }
+ ],
+ "tags": [],
+ "recurrings": []
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getproductreviews">GetProductReviews(id, page)</h3>
+<div class="getproductreviews"><div class="shop-module-shopservice-getproductreviews-page"><p>Get product reviews of a product</p>
+</div><h5 id="methods_getproductreviews_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getproductreviews-page"><p>Product id</p>
+</div></td></tr><tr><td>page</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-getproductreviews-page"><p>Page number</p>
+</div></td></tr></tbody></table><h5 id="methods_getproductreviews_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getproductreviews-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_getproductreviews_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-getproductreviews-page"><pre class="prettyprint linenums">
+ShopService.GetProductReviews($scope.item.product_id, $scope.page).then(function (data) {
+   $scope.reviews = data.reviews;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+{
+  "reviews": [
+    {
+      "author": "Adam",
+      "text": "this is a very nice product. i like this",
+      "rating": 4,
+      "date_added": "30/07/2016"
+    }
+  ],
+  "text_no_reviews": "There are no reviews for this product.",
+  "pagination": "",
+  "results": "Showing 1 to 1 of 1 (1 Pages)"
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_getringsizeimage">GetRingSizeImage()</h3>
+<div class="getringsizeimage"><div class="shop-module-shopservice-getringsizeimage-page"><p>Gets ring size guid image. This is a sample service call to retrieve a banner by <code>id</code></p>
+</div><h5 id="methods_getringsizeimage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-getringsizeimage-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_searchproducts">SearchProducts(search, page)</h3>
+<div class="searchproducts"><div class="shop-module-shopservice-searchproducts-page"><p>Search for products by a given search term</p>
+</div><h5 id="methods_searchproducts_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>search</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="shop-module-shopservice-searchproducts-page"><p>Search term</p>
+</div></td></tr><tr><td>page</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="shop-module-shopservice-searchproducts-page"><p>Page number</p>
+</div></td></tr></tbody></table><h5 id="methods_searchproducts_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="shop-module-shopservice-searchproducts-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_searchproducts_example">Example</h4>
+<div class="example"><div class="shop-module-shopservice-searchproducts-page"><pre class="prettyprint linenums">
+ShopService.SearchProducts(vm.search.value, $scope.page).then(function (data) {
+   $scope.items = data.products;
+});
+</pre>
+Resolved Object
+<pre class="prettyprint linenums">
+   {
+     "text_empty": "There is no product that matches the search criteria.",
+     "products": [
+       {
+         "product_id": "42",
+         "thumb": "full_image_path228x228.jpg",
+         "name": "Apple Cinema 30",
+         "description": "The 30-inch Apple Cinema HD Display del..",
+         "price": "$122.00",
+         "price_clear": "100.0000",
+         "special": "$110.00",
+         "special_clear": "90.0000",
+         "off": "10",
+         "mobile_special": false,
+         "mobile_special_clear": null,
+         "tax": "$90.00",
+         "minimum": "2",
+         "rating": 0,
+         "images": [
+           "full_image_path100x100.jpg",
+           "full_image_path100x100.jpg",
+           "full_image_path100x100.jpg"
+         ]
+       }
+     ],
+     "search": "apple",
+     "description": "apple",
+     "category_id": "0",
+     "sub_category": "0",
+     "sort": "p.sort_order",
+     "order": "ASC",
+     "limit": 10
+   }
+</pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

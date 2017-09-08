@@ -1,0 +1,46 @@
+{
+  "name": "i2csMobile",
+  "private": true,
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4",
+    "ngstorage": "^0.3.10",
+    "angular-messages": "*",
+    "ngCordova": "*",
+    "ionic-platform-web-client": "^0.7.1",
+    "ng-cordova-oauth": "^0.2.9",
+    "angular-preload-image": "*"
+  },
+  "preen": {
+    "ngstorage": [
+      "ngStorage.min.js"
+    ],
+    "ngCordova": [
+      "dist/ng-cordova.min.js"
+    ],
+    "ionic": [
+      "js/ionic.bundle.min.js"
+    ],
+    "ionic-platform-web-client": [
+      "dist/ionic.io.bundle.min.js",
+	  "dist/ionic.io.bundle.js"
+    ],
+    "ng-messages": [
+      "angular-messages.min.js"
+    ],
+    "angular-preload-image": [
+      "angular-preload-image.min.js"
+    ],
+    "angular": [
+      "angular.min.js"
+    ],
+    "angular-animate": [
+      "angular-animate.min.js"
+    ]
+  },
+  "resolutions": {
+    "angular": "1.5.7"
+  },
+  "devDependencies": {
+    "ionic-platform-web-client": "^0.7.1"
+  }
+}

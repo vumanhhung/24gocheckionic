@@ -1,0 +1,57 @@
+<h1><code ng:non-bindable="">appService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">starter</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="starter-appservice-page"><p>Contains service methods related to customer login and registration</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/dateService">dateService</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_login">Login(login)</h3>
+<div class="login"><div class="starter-appservice-login-page"><p>Logs in a user</p>
+</div><h5 id="methods_login_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>login</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="starter-appservice-login-page"><p>Object containing login data</p>
+</div><table><thead><tr><th>Property</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>username</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-login-page"><p>Customers email address. must be a valid email address</p>
+</div></td></tr><tr><td>password</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-login-page"><p>Password. must be between 4 and 20 characters and must match with the account of the email address provided</p>
+</div></td></tr></tbody></table></td></tr></tbody></table><h5 id="methods_login_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="starter-appservice-login-page"><p>Promise of the API call</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_logout">Logout()</h3>
+<div class="logout"><div class="starter-appservice-logout-page"><p>Logout current session from API</p>
+</div><h5 id="methods_logout_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="starter-appservice-logout-page"><p>Promise of the API call</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_register">Register(register)</h3>
+<div class="register"><div class="starter-appservice-register-page"><p>Registers a new user</p>
+</div><h5 id="methods_register_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>register</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="starter-appservice-register-page"><p>Registration information</p>
+</div><table><thead><tr><th>Property</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>firstname</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Customers first name. must be between 1 and 32 characters</p>
+</div></td></tr><tr><td>lastname</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Customers last name. must be between 1 and 32 characters</p>
+</div></td></tr><tr><td>email</td><td><a href="" class="label type-hint type-hint-email">email</a></td><td><div class="starter-appservice-register-page"><p>Customers email address. must be a valid email address</p>
+</div></td></tr><tr><td>password</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Password. must be between 4 and 20 characters</p>
+</div></td></tr><tr><td>confirm</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Password confirmation. should be same as the password</p>
+</div></td></tr><tr><td>telephone</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Customers telephone number. must be between 3 and 32 characters</p>
+</div></td></tr><tr><td>address_1</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Address line 1. must be between 3 and 128 characters</p>
+</div></td></tr><tr><td>address_2 <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Address line 2</p>
+</div></td></tr><tr><td>city</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Address City. must be between 2 and 128 characters</p>
+</div></td></tr><tr><td>postcode</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Postal code</p>
+</div></td></tr><tr><td>country_id</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="starter-appservice-register-page"><p>Country id</p>
+</div></td></tr><tr><td>zone_id</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-register-page"><p>Zone id</p>
+</div></td></tr><tr><td>customer_group_id <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="starter-appservice-register-page"><p>Customer group id. if none provided config_customer_group_id will be assigned</p>
+</div></td></tr><tr><td>newsletter <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="starter-appservice-register-page"><p>Sign up for newsletters</p>
+</div></td></tr></tbody></table></td></tr></tbody></table><h5 id="methods_register_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="starter-appservice-register-page"><p>Promise of the API call</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setlanguage">SetLanguage(lang)</h3>
+<div class="setlanguage"><div class="starter-appservice-setlanguage-page"><p>Sets language of the OpenCart system to given locale. code parameter is expected in ISO standard language code, ex <code>en-US</code></p>
+</div><h5 id="methods_setlanguage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>lang</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-appservice-setlanguage-page"><p>Language code Ex. <code>en-US</code></p>
+</div></td></tr></tbody></table><h5 id="methods_setlanguage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="starter-appservice-setlanguage-page"><p>Returns a promise</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

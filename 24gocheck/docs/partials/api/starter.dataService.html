@@ -1,0 +1,62 @@
+<h1><code ng:non-bindable="">dataService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">starter</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="starter-dataservice-page"><p>Calls the http API endpoints and resolves the response. Contains authentication call, <code>apiLogin</code> which should be 
+called before using apiSecuredPost method. otherwise it will reject the request with error status of 0 on API 
+calls which needs the authentication. The <code>dataService</code> is responsible for providing a <code>promise</code> object containing 
+the requested data. On a success response it returns the data from the server, and on an error the promise rejects 
+with the HTTP server response. i.e, HTTP server response object contains,</p>
+<pre><code>config:Object
+data:Object
+headers:function(c)
+status:406
+statusText:&quot;Not Acceptable&quot;
+</code></pre></div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$http">$http</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$httpParamSerializerJQLike">$httpParamSerializerJQLike</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/starter.BASE_API_URL">BASE_API_URL</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_apilogin">apiLogin(data)</h3>
+<div class="apilogin"><div class="starter-dataservice-apilogin-page"><p>Have to call login service before using apiSecuredPost method. otherwise it will reject the request with error status of 0 on
+API calls which needs the authentication</p>
+</div><h5 id="methods_apilogin_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="starter-dataservice-apilogin-page"><p>to be sent via HTTP post params</p>
+</div></td></tr></tbody></table><h5 id="methods_apilogin_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="starter-dataservice-apilogin-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_apisecuredpost">apiSecuredPost(url, data)</h3>
+<div class="apisecuredpost"><div class="starter-dataservice-apisecuredpost-page"><p>Calls the http API endpoints and resolves the response</p>
+</div><h5 id="methods_apisecuredpost_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>url</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="starter-dataservice-apisecuredpost-page"><p>Relative URL of the API endpoint. Ex &quot;/layout/banners&quot;</p>
+</div></td></tr><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="starter-dataservice-apisecuredpost-page"><p>Data to be sent via Http post params</p>
+</div></td></tr></tbody></table><h5 id="methods_apisecuredpost_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="starter-dataservice-apisecuredpost-page"><p>Returns a promise of the API call.</p>
+</div></td></tr></table><h4 id="methods_apisecuredpost_example">Example</h4>
+<div class="example"><div class="starter-dataservice-apisecuredpost-page"><pre class="prettyprint linenums">
+this.GetSomething = function () {
+    return dataService.apiSecuredPost('/ctrl/sample');
+}
+</pre>
+or
+<pre class="prettyprint linenums">
+this.GetSomething = function () {
+    return dataService.apiSecuredPost('/ctrl/sample').then(function(data){
+       // success
+    }, function(data){
+       // error
+    })
+}
+</pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

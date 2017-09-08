@@ -1,0 +1,71 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ionic">ionic</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ngCordova">ngCordova</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/angular-preload-image">angular-preload-image</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ngLocalize">ngLocalize</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ngLocalize.InstalledLanguages">InstalledLanguages</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ionic.service.core">core</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ionic.service.analytics">analytics</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ngStorage">ngStorage</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ngMessages">ngMessages</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/shop.module">module</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/offers.module">module</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/cart.module">module</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/info.module">module</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/payments.module">module</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/auth.module">module</a></code>
+</li>
+</ul>
+<div class="starter-page"><p>Main entry point of the app. When a new module needs to be added, have to inject the module here. ex, <code>sample.module</code>
+New languages must be initialized by editing following configuration values,</p>
+<pre><code> .value(&#39;localeSupported&#39;, [
+        &#39;en-US&#39;,
+        &#39;fr-FR&#39;,
+        &#39;zh-CN&#39;
+    ])
+</code></pre><p>Configuration for the main entrypoint of the app is here. 
+You can switch the main layout (tabs or side menu) by toggling templateUrl of the 
+&#39;app.menu&#39; state. </p>
+<p>The app is bootstrapped from an abstract state called <code>app</code>. Then it branches into 
+two abstract states, <code>app.menu</code> and <code>app.main</code>. All the states which inherit <code>app.menu</code>
+state will have either tabs or side menu, whereas <code>app.main</code> will have a clean 
+layout without tabs or side menus.</p>
+<pre><code>$stateProvider
+    .state(&#39;app&#39;, {
+        url: &#39;/app&#39;,
+        abstract: true,
+        templateUrl: &#39;app/menu/templates/app.html&#39;,
+        controller: &#39;AppCtrl&#39;
+    })
+    .state(&#39;app.menu&#39;, {
+        url: &#39;/menu&#39;,
+        abstract: true,
+        templateUrl: &#39;app/menu/templates/tabs.html&#39;,
+        //templateUrl: &#39;app/menu/templates/side.html&#39;,
+        controller: &#39;MenuCtrl&#39;
+    })
+    .state(&#39;app.main&#39;, {
+        url: &#39;/main&#39;,
+        abstract: true,
+        templateUrl: &#39;app/menu/templates/menuless.html&#39;,
+        controller: &#39;MainCtrl&#39;
+    })
+</code></pre></div></div>
